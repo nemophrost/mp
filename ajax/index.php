@@ -1,6 +1,8 @@
 <?php
 
 if (isset($_REQUEST['url'])) {
+	header('Content-Type: text/html; charset=ISO-8859-1');
+
 	$url = urldecode($_REQUEST['url']);
 	
 	$link = mysql_connect('mp', 'root', 'password');

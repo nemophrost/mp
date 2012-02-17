@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mountain Project Extraction</title>
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0px; padding: 0px }
+  #map_canvas { height: 100% }
+</style>
+<script type="text/javascript"
+    src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+<script type="text/javascript">
+  function initialize() {
+    var latlng = new google.maps.LatLng(40.2655,-111.621);
+    var myOptions = {
+      zoom: 16,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+	  disableDefaultUI: true
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+
+	var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(40.2655,-111.621),
+	  map: map,
+      title:"Hello World!",
+	  icon:'http://gmaps-samples.googlecode.com/svn/trunk/markers/orange/marker34.png'
+	});
+
+	// To add the marker to the map, call setMap();
+	//marker.setMap(map);
+  }
+
+</script>
+</head>
+<body onload="initialize()">
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+</html>
